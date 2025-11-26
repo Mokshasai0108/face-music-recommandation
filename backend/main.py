@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 
 # Import emotion detection models
 from models.face_emotion import FaceEmotionDetector
-from models.speech_emotion import SpeechEmotionDetector
+
 
 from models.fusion import EmotionFusion
 from spotify_handler import SpotifyHandler
@@ -34,14 +34,14 @@ logger = logging.getLogger(__name__)
 
 # Initialize models (lazy loading)
 face_detector = None
-speech_detector = None
+
 
 fusion_module = None
 spotify_handler = None
 
 def load_models():
     """Load ML models on startup"""
-    global face_detector, speech_detector, fusion_module, spotify_handler
+    global face_detector, fusion_module, spotify_handler
     
     logger.info("Starting model initialization...")
     
@@ -58,11 +58,7 @@ def load_models():
     except Exception as e:
         logger.error(f"Error loading Face Detector: {str(e)}")
 
-    # Initialize Speech Detector
-    try:
-        speech_detector = SpeechEmotionDetector()
-    except Exception as e:
-        logger.error(f"Error loading Speech Detector: {str(e)}")
+
 
 
 
@@ -78,17 +74,15 @@ def load_models():
 class FacePredictRequest(BaseModel):
     image: str  # base64 encoded image
 
-class SpeechPredictRequest(BaseModel):
-    audio: str  # base64 encoded audio
-    sample_rate: int = 16000
+
 
 
 
 class FusionRequest(BaseModel):
     face: Optional[Dict] = None
-    speech: Optional[Dict] = None
+
     face: Optional[Dict] = None
-    speech: Optional[Dict] = None
+
     strategy: str = "late"
     weights: Optional[Dict] = None
 
@@ -113,9 +107,9 @@ async def health_check():
     """Check API and model health"""
     models_loaded = all([
         face_detector is not None,
-        speech_detector is not None,
+
         face_detector is not None,
-        speech_detector is not None,
+
         fusion_module is not None,
         spotify_handler is not None
     ])
@@ -142,17 +136,7 @@ async def predict_face_emotion(request: FacePredictRequest):
         logger.error(f"Face prediction error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@api_router.post("/predict/speech")
-async def predict_speech_emotion(request: SpeechPredictRequest):
-    try:
-        if speech_detector is None:
-            raise HTTPException(status_code=503, detail="Speech detector not loaded")
-        
-        result = speech_detector.predict(request.audio, request.sample_rate)
-        return result
-    except Exception as e:
-        logger.error(f"Speech prediction error: {str(e)}")
-        raise HTTPException(status_code=500, detail=str(e))
+
 
 
 
@@ -165,7 +149,7 @@ async def fuse_emotions(request: FusionRequest):
         if request.strategy == "late":
             return fusion_module.late_fusion(
                 face_result=request.face,
-                speech_result=request.speech,
+                speech_result=None,
                 text_result=None,
                 weights=request.weights
             )

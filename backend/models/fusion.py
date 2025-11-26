@@ -14,9 +14,9 @@ class EmotionFusion:
         logger.info("Initializing Emotion Fusion module")
         # Default weights for late fusion
         self.default_weights = {
-            'face': 0.4,
-            'speech': 0.3,
-            'text': 0.3
+            'face': 0.6,
+
+            'text': 0.4
         }
     
     def late_fusion(
@@ -41,10 +41,7 @@ class EmotionFusion:
                 modality_probs.append(face_result['probabilities'])
                 modality_weights.append(weights.get('face', 0.4))
             
-            if speech_result and 'probabilities' in speech_result:
-                available_modalities.append('speech')
-                modality_probs.append(speech_result['probabilities'])
-                modality_weights.append(weights.get('speech', 0.3))
+
             
             if text_result and 'probabilities' in text_result:
                 available_modalities.append('text')
@@ -100,8 +97,7 @@ class EmotionFusion:
         if face_result:
             confidences['face'] = face_result.get('confidence', 0.0)
         
-        if speech_result:
-            confidences['speech'] = speech_result.get('confidence', 0.0)
+
         
         if text_result:
             confidences['text'] = text_result.get('confidence', 0.0)
