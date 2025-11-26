@@ -46,7 +46,7 @@ const Home = () => {
       // Need at least one modality
       if (!face) return;
 
-      const result = await fuseEmotions(face, null, null, 'late');
+      const result = await fuseEmotions(face, null, 'late');
 
       setCurrentEmotion(result.emotion_fused);
       setConfidence(result.confidence);

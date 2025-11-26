@@ -1,0 +1,82 @@
+2025-11-27 00:36:11,329 - main - INFO - Starting model initialization...
+2025-11-27 00:36:11,329 - main - INFO - Initializing Spotify Handler...
+2025-11-27 00:36:11,334 - spotify_handler - INFO - Initializing Spotify client with ID: 2cda5... if present
+2025-11-27 00:36:11,339 - spotify_handler - INFO - Spotify client initialized successfully
+2025-11-27 00:36:11,339 - spotify_handler - INFO - Checking for cache file at: C:\Users\kmoks\OneDrive\Desktop\MUsic Recommendor\backend\data\spotify_playlist_25hrs.csv
+2025-11-27 00:36:11,481 - spotify_handler - INFO - Loaded 392 tracks from cache
+2025-11-27 00:36:11,487 - models.face_emotion - INFO - Initializing Face Emotion Detector...
+2025-11-27 00:36:11,490 - models.face_emotion - INFO - Face Emotion Detector ready (using DeepFace)
+2025-11-27 00:36:11,491 - models.fusion - INFO - Initializing Emotion Fusion module
+2025-11-27 00:36:11,493 - main - INFO - Model initialization complete
+2025-11-27 00:39:46,499 - main - INFO - Starting model initialization...
+2025-11-27 00:39:46,517 - main - INFO - Initializing Spotify Handler...
+2025-11-27 00:39:46,644 - spotify_handler - INFO - Initializing Spotify client with ID: 2cda5... if present
+2025-11-27 00:39:46,648 - spotify_handler - INFO - Spotify client initialized successfully
+2025-11-27 00:39:46,649 - spotify_handler - INFO - Checking for cache file at: C:\Users\kmoks\OneDrive\Desktop\MUsic Recommendor\backend\data\spotify_playlist_25hrs.csv
+2025-11-27 00:39:47,058 - spotify_handler - INFO - Loaded 392 tracks from cache
+2025-11-27 00:39:47,062 - models.face_emotion - INFO - Initializing Face Emotion Detector...
+2025-11-27 00:39:47,065 - models.face_emotion - INFO - Face Emotion Detector ready (using DeepFace)
+2025-11-27 00:39:47,072 - models.fusion - INFO - Initializing Emotion Fusion module
+2025-11-27 00:39:47,073 - main - INFO - Model initialization complete
+2025-11-27 00:40:39,576 - main - INFO - Received recommendation request for emotion: happy
+2025-11-27 00:40:40,022 - main - INFO - Recommended song: Two Two Two (From "Kaathuvaakula Rendu Kaadhal")
+2025-11-27 00:41:38,025 - spotify_handler - INFO - Fetching playlist: 6KSlOvt9LadMzFCspzB2oh
+2025-11-27 00:41:47,256 - spotify_handler - INFO - Fetched 392 tracks
+2025-11-27 00:41:47,421 - spotify_handler - INFO - Found 169 unique artists
+2025-11-27 00:41:49,263 - spotify_handler - INFO - Fetched artist details
+2025-11-27 00:41:51,071 - spotify_handler - INFO - Cached 392 tracks to C:\Users\kmoks\OneDrive\Desktop\MUsic Recommendor\backend\data\spotify_playlist_25hrs.csv
+2025-11-27 00:44:31,110 - main - INFO - Starting model initialization...
+2025-11-27 00:44:31,114 - main - INFO - Initializing Spotify Handler...
+2025-11-27 00:44:31,121 - spotify_handler - INFO - Initializing Spotify client with ID: 2cda5... if present
+2025-11-27 00:44:31,123 - spotify_handler - INFO - Spotify client initialized successfully
+2025-11-27 00:44:31,123 - spotify_handler - INFO - Checking for cache file at: C:\Users\kmoks\OneDrive\Desktop\MUsic Recommendor\backend\data\spotify_playlist_25hrs.csv
+2025-11-27 00:44:31,715 - spotify_handler - INFO - Loaded 392 tracks from cache
+2025-11-27 00:44:31,717 - models.face_emotion - INFO - Initializing Face Emotion Detector...
+2025-11-27 00:44:31,719 - models.face_emotion - INFO - Face Emotion Detector ready (using DeepFace)
+2025-11-27 00:44:31,720 - models.fusion - INFO - Initializing Emotion Fusion module
+2025-11-27 00:44:31,723 - main - INFO - Model initialization complete
+2025-11-27 00:44:31,965 - main - INFO - Received recommendation request for emotion: happy
+2025-11-27 00:44:32,030 - main - INFO - Recommended song: Pillaa Raa
+2025-11-27 00:46:07,178 - main - INFO - Starting model initialization...
+2025-11-27 00:46:07,187 - main - INFO - Initializing Spotify Handler...
+2025-11-27 00:46:07,204 - spotify_handler - INFO - Initializing Spotify client with ID: 2cda5... if present
+2025-11-27 00:46:07,219 - spotify_handler - INFO - Spotify client initialized successfully
+2025-11-27 00:46:07,226 - spotify_handler - INFO - Checking for cache file at: C:\Users\kmoks\OneDrive\Desktop\MUsic Recommendor\backend\data\spotify_playlist_25hrs.csv
+2025-11-27 00:46:07,558 - spotify_handler - INFO - Loaded 392 tracks from cache
+2025-11-27 00:46:07,572 - models.face_emotion - INFO - Initializing Face Emotion Detector...
+2025-11-27 00:46:07,575 - models.face_emotion - INFO - Face Emotion Detector ready (using DeepFace)
+2025-11-27 00:46:07,587 - models.fusion - INFO - Initializing Emotion Fusion module
+2025-11-27 00:46:07,603 - main - INFO - Model initialization complete
+2025-11-27 00:47:08,272 - main - INFO - Received face prediction request
+2025-11-27 00:49:25,642 - main - INFO - Face prediction result: {'emotion': 'neutral', 'confidence': 0.4350277082334145, 'probabilities': {'happy': 0.08198309200804695, 'sad': 0.18991149899552798, 'angry': 0.0030363304694111235, 'calm': 0.2900184721556097, 'neutral': 0.4350277082334145, 'excited': 2.289813798969562e-05}}
+2025-11-27 00:49:26,036 - main - INFO - Received face prediction request
+2025-11-27 00:49:35,278 - main - INFO - Face prediction result: {'emotion': 'neutral', 'confidence': 0.49924186092990436, 'probabilities': {'happy': 0.14824048173131069, 'sad': 0.01929809501066394, 'angry': 0.00039067812103673997, 'calm': 0.3328279072866029, 'neutral': 0.49924186092990436, 'excited': 9.769204814050194e-07}}
+2025-11-27 00:49:35,332 - main - INFO - Received face prediction request
+2025-11-27 00:49:43,099 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9753705884427103, 'probabilities': {'happy': 0.9753705884427103, 'sad': 9.522658586767296e-05, 'angry': 1.4767990774469299e-06, 'calm': 0.009813054815850139, 'neutral': 0.014719582223775207, 'excited': 7.113271916364292e-08}}
+2025-11-27 00:49:43,117 - main - INFO - Received face prediction request
+2025-11-27 00:49:50,735 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9474493562317571, 'probabilities': {'happy': 0.9474493562317571, 'sad': 8.45252923333907e-07, 'angry': 1.5786060680501153e-09, 'calm': 0.021019890173457678, 'neutral': 0.03152983526018652, 'excited': 7.150306944715992e-08}}
+2025-11-27 00:49:50,996 - main - INFO - Received face prediction request
+2025-11-27 00:49:57,285 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9968239382554954, 'probabilities': {'happy': 0.9968239382554954, 'sad': 0.0007285102777593245, 'angry': 7.599984602936636e-07, 'calm': 0.0, 'neutral': 0.0024467507435925995, 'excited': 4.0724692355080066e-08}}
+2025-11-27 00:49:57,288 - main - INFO - Received face prediction request
+2025-11-27 00:49:59,862 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9564129529723704, 'probabilities': {'happy': 0.9564129529723704, 'sad': 0.00019576877553640422, 'angry': 4.534578770439003e-07, 'calm': 0.01735625850448374, 'neutral': 0.026034387756725605, 'excited': 1.7853300686452695e-07}}
+2025-11-27 00:49:59,865 - main - INFO - Received face prediction request
+2025-11-27 00:50:02,964 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9555451927466235, 'probabilities': {'happy': 0.9555451927466235, 'sad': 0.00038454060288227525, 'angry': 7.932932844055592e-07, 'calm': 0.017627609813857706, 'neutral': 0.026441414720786552, 'excited': 4.488225655824875e-07}}
+2025-11-27 00:50:02,970 - main - INFO - Received face prediction request
+2025-11-27 00:50:06,026 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9189953588599116, 'probabilities': {'happy': 0.9189953588599116, 'sad': 0.040187600538476545, 'angry': 0.0009974190708177298, 'calm': 0.015927489260723234, 'neutral': 0.023891233891084846, 'excited': 8.983789860253547e-07}}
+2025-11-27 00:50:06,030 - main - INFO - Received face prediction request
+2025-11-27 00:50:08,544 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9631330182772483, 'probabilities': {'happy': 0.9631330182772483, 'sad': 0.00010560710407480805, 'angry': 3.2139700429560983e-07, 'calm': 0.01470440769595982, 'neutral': 0.022056611543939727, 'excited': 3.3981773073201113e-08}}
+2025-11-27 00:50:08,558 - main - INFO - Received recommendation request for emotion: happy
+2025-11-27 00:50:08,752 - main - INFO - Recommended song: Maate Vinadhuga
+2025-11-27 00:50:08,767 - main - INFO - Received face prediction request
+2025-11-27 00:50:11,413 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9963034931769162, 'probabilities': {'happy': 0.9963034931769162, 'sad': 8.279895390129614e-05, 'angry': 7.138285285581785e-07, 'calm': 0.0, 'neutral': 0.003612978859907866, 'excited': 1.518074600087567e-08}}
+2025-11-27 00:50:11,416 - main - INFO - Received face prediction request
+2025-11-27 00:50:14,180 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9992935842524802, 'probabilities': {'happy': 0.9992935842524802, 'sad': 1.7135776475000204e-05, 'angry': 2.400161137356321e-07, 'calm': 0.0, 'neutral': 0.0006890154435664512, 'excited': 2.4511364605373525e-08}}
+2025-11-27 00:50:14,188 - main - INFO - Received face prediction request
+2025-11-27 00:50:16,666 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.995310358625245, 'probabilities': {'happy': 0.995310358625245, 'sad': 0.00025430224247287373, 'angry': 3.9574918106139587e-05, 'calm': 0.0017582565310612127, 'neutral': 0.0026373847965918185, 'excited': 1.2288652302451033e-07}}
+2025-11-27 00:50:16,719 - spotify_handler - INFO - Fetching playlist: 6KSlOvt9LadMzFCspzB2oh
+2025-11-27 00:50:23,013 - spotify_handler - INFO - Fetched 392 tracks
+2025-11-27 00:50:23,022 - spotify_handler - INFO - Found 169 unique artists
+2025-11-27 00:50:24,892 - spotify_handler - INFO - Fetched artist details
+2025-11-27 00:50:28,571 - spotify_handler - INFO - Cached 392 tracks to C:\Users\kmoks\OneDrive\Desktop\MUsic Recommendor\backend\data\spotify_playlist_25hrs.csv
+2025-11-27 00:50:29,216 - main - INFO - Received face prediction request
+2025-11-27 00:50:53,465 - main - INFO - Face prediction result: {'emotion': 'happy', 'confidence': 0.9978209707480638, 'probabilities': {'happy': 0.9978209707480638, 'sad': 1.4848788742916623e-05, 'angry': 2.574964928549248e-07, 'calm': 0.0, 'neutral': 0.002163868879863687, 'excited': 5.4086836887268e-08}}

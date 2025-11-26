@@ -81,7 +81,7 @@ class FacePredictRequest(BaseModel):
 class FusionRequest(BaseModel):
     face: Optional[Dict] = None
 
-    face: Optional[Dict] = None
+
 
     strategy: str = "late"
     weights: Optional[Dict] = None
@@ -99,17 +99,14 @@ class FeedbackRequest(BaseModel):
 
 # Routes
 @api_router.get("/")
-async def root():
+def root():
     return {"message": "Emotion Music API", "status": "running"}
 
 @api_router.get("/health")
-async def health_check():
+def health_check():
     """Check API and model health"""
     models_loaded = all([
         face_detector is not None,
-
-        face_detector is not None,
-
         fusion_module is not None,
         spotify_handler is not None
     ])
@@ -123,7 +120,7 @@ async def health_check():
     }
 
 @api_router.post("/predict/face")
-async def predict_face_emotion(request: FacePredictRequest):
+def predict_face_emotion(request: FacePredictRequest):
     try:
         if face_detector is None:
             raise HTTPException(status_code=503, detail="Face detector not loaded")
@@ -141,7 +138,7 @@ async def predict_face_emotion(request: FacePredictRequest):
 
 
 @api_router.post("/fuse")
-async def fuse_emotions(request: FusionRequest):
+def fuse_emotions(request: FusionRequest):
     try:
         if fusion_module is None:
             raise HTTPException(status_code=503, detail="Fusion module not loaded")
@@ -160,7 +157,7 @@ async def fuse_emotions(request: FusionRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @api_router.post("/recommend")
-async def recommend_song(request: RecommendRequest):
+def recommend_song(request: RecommendRequest):
     try:
         if spotify_handler is None:
             raise HTTPException(status_code=503, detail="Spotify handler not initialized")
@@ -181,7 +178,7 @@ async def recommend_song(request: RecommendRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @api_router.post("/feedback")
-async def log_feedback(request: FeedbackRequest):
+def log_feedback(request: FeedbackRequest):
     """
     Feedback endpoint preserved but now does NOT store anything.
     Simply acknowledges receiving feedback.
@@ -189,7 +186,7 @@ async def log_feedback(request: FeedbackRequest):
     return {"status": "received", "note": "MongoDB removed — feedback not stored."}
 
 @api_router.get("/playlist/stats")
-async def get_playlist_stats():
+def get_playlist_stats():
     try:
         if spotify_handler is None:
             raise HTTPException(status_code=503, detail="Spotify handler not initialized")
@@ -200,7 +197,7 @@ async def get_playlist_stats():
         raise HTTPException(status_code=500, detail=str(e))
 
 @api_router.post("/setup/fetch-playlist")
-async def fetch_spotify_playlist():
+def fetch_spotify_playlist():
     try:
         if spotify_handler is None:
             raise HTTPException(status_code=503, detail="Spotify handler not initialized")
@@ -211,7 +208,7 @@ async def fetch_spotify_playlist():
         raise HTTPException(status_code=500, detail=str(e))
 
 @api_router.get("/analytics/session")
-async def get_session_analytics():
+def get_session_analytics():
     """Returns empty structure since MongoDB is removed."""
     return {
         "emotions_timeline": [],

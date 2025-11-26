@@ -66,7 +66,7 @@ class SpotifyHandler:
             logger.info(f"Checking for cache file at: {self.cache_file}")
             
             if self.cache_file.exists():
-                self.playlist_df = pd.read_csv(self.cache_file)
+                self.playlist_df = pd.read_csv(self.cache_file).fillna('')
                 if len(self.playlist_df) > 0:
                     logger.info(f"Loaded {len(self.playlist_df)} tracks from cache")
                     return
@@ -258,9 +258,9 @@ class SpotifyHandler:
                 'image_url': song['image_url'],
                 'preview_url': song['preview_url'],
                 'url': song['url'],
-                'valence': float(song['valence']),
-                'energy': float(song['energy']),
-                'duration_ms': int(song['duration_ms'])
+                'valence': float(song['valence']) if pd.notna(song['valence']) else 0.5,
+                'energy': float(song['energy']) if pd.notna(song['energy']) else 0.5,
+                'duration_ms': int(song['duration_ms']) if pd.notna(song['duration_ms']) else 0
             }
             
         except Exception as e:
