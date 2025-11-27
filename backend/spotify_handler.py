@@ -223,8 +223,12 @@ class SpotifyHandler:
         """Recommend a song based on detected emotion"""
         try:
             if self.playlist_df is None or len(self.playlist_df) == 0:
-                logger.warning("Playlist not loaded")
-                return None
+                logger.warning("Playlist not loaded. Attempting to reload cache...")
+                self._load_cache()
+                
+                if self.playlist_df is None or len(self.playlist_df) == 0:
+                    logger.warning("Playlist still not loaded after reload attempt.")
+                    return None
             
             # Get emotion criteria
             criteria = self.EMOTION_CRITERIA.get(emotion, self.EMOTION_CRITERIA['neutral'])

@@ -74,13 +74,15 @@ class FaceEmotionDetector:
             # enforce_detection=False allows it to return even if face detection is weak (or it processes the whole image)
             # However, if no face is found, it might throw an error or return default.
             try:
+                logger.info("Starting DeepFace analysis...")
                 results = DeepFace.analyze(
                     img_path=img, 
                     actions=['emotion'], 
-                    enforce_detection=True,
-                    detector_backend='retinaface',
+                    enforce_detection=False, # Changed to False to prevent errors if no face
+                    detector_backend='opencv', # Changed to opencv for speed/stability
                     silent=True
                 )
+                logger.info("DeepFace analysis completed")
             except Exception as inner_e:
                 logger.warning(f"DeepFace analysis failed: {inner_e}")
                 results = []

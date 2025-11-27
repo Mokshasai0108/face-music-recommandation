@@ -47,9 +47,14 @@ const Home = () => {
       if (!face) return;
 
       const result = await fuseEmotions(face, null, 'late');
+      console.log('Fusion result:', result);
 
-      setCurrentEmotion(result.emotion_fused);
-      setConfidence(result.confidence);
+      if (result && result.emotion_fused) {
+        setCurrentEmotion(result.emotion_fused);
+        setConfidence(result.confidence);
+      } else {
+        console.warn('Fusion result missing emotion_fused:', result);
+      }
 
       // Update modality confidences
       const modConf = {};
@@ -65,7 +70,7 @@ const Home = () => {
       }]);
 
       // Recommend song if emotion changed and confidence is high
-      if (result.emotion_fused !== lastEmotionRef.current && result.confidence > 0.7) {
+      if (result.emotion_fused !== lastEmotionRef.current && result.confidence > 0.5) {
         await recommendSongByEmotion(result.emotion_fused);
         lastEmotionRef.current = result.emotion_fused;
       }
@@ -85,7 +90,7 @@ const Home = () => {
       if (error.response?.status === 404) {
         toast.error('Playlist not loaded. Please sync Spotify playlist in Settings.');
       } else {
-        toast.error('Failed to get recommendation');
+        toast.error('Failed to get recommendation: ' + (error.response?.data?.detail || error.message));
       }
     }
   };
